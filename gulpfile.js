@@ -1,12 +1,13 @@
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var autoprefixer = require("gulp-autoprefixer"); //not supported by source maps
-var browserSync = require("browser-sync").create(); //do i need to remove it from sass?
-var concat= require("gulp-concat");
-const babel = require("gulp-babel");
-var uglify = require("gulp-uglify");
-var sourcemaps = require("gulp-sourcemaps");
-const jasmineBrowser = require("gulp-jasmine-browser");
+const gulp = require("gulp"),
+    sass = require("gulp-sass"),
+    autoprefixer = require("gulp-autoprefixer"), //not supported by source maps
+    browserSync = require("browser-sync").create(), //do i need to remove it from sass?
+    concat= require("gulp-concat"),
+    babel = require("gulp-babel"),
+    uglify = require("gulp-uglify"),
+    sourcemaps = require("gulp-sourcemaps"),
+    jasmineBrowser = require("gulp-jasmine-browser"),
+    imagemin = require("gulp-imagemin");
 
 //sass and prefixer; launched with sync command
 gulp.task("sass", function(done) {
@@ -109,10 +110,20 @@ gulp.task("scripts-dist", function(done){
 });
 
 //production task
-gulp.task("dist", gulp.series("copy-html", "copy-images", /* 'sass', */ "scripts-dist"));
+gulp.task("dist", gulp.series("copy-html", "copy-images", "copy-css",/* 'sass', */ "scripts-dist"));
 //jasmin
 gulp.task("tests", function() {
     gulp.src("tests/spec/extraSpec.js")
         .pipe(jasmineBrowser.specRunner())
         .pipe(jasmineBrowser.server({port:3001}));
+});
+
+//imagemin
+gulp.task('default', function() {
+    return gulp.src('src/images/*')
+        .pipe(imagemin({
+            progressive: true,
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('dist/images'));
 });
