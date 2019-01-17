@@ -36,3 +36,4 @@ Most of the code in this project has been written to the ES6 JavaScript specific
 ## my dependencies: 
 browser-sync start --server -f -w
 https://www.npmjs.com/package/http-server
+https://github.com/processing/p5.js/wiki/Local-server
