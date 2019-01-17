@@ -54,9 +54,8 @@ gulp.task("watch", gulp.parallel("watch:scss", "watch:html", "watch:js"));
 //browser sync, launched with sync
 gulp.task("browserSync", function(done) {
     browserSync.init({
-        server: {
-            baseDir: "app"
-        },
+          server: "./app",
+          port: 8000 
     });
     done();
 });
@@ -119,11 +118,11 @@ gulp.task("tests", function() {
 });
 
 //imagemin
-gulp.task('default', function() {
-    return gulp.src('src/images/*')
+gulp.task("default", function() {
+    return gulp.src("src/images/*")
         .pipe(imagemin({
             progressive: true,
             use: [pngquant()]
         }))
-        .pipe(gulp.dest('dist/images'));
+        .pipe(gulp.dest("dist/images"));
 });
