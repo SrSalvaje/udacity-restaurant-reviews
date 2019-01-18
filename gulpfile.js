@@ -13,7 +13,7 @@ const gulp = require("gulp"),
 gulp.task("sass", function(done) {
     gulp.watch("app/scss/**/*.scss", browserSync.reload());
     gulp.src("app/scss/**/*.scss")
-        .pipe(sass({outputStyle: "compressed"}).on("error", sass.logError))
+        .pipe(sass({outputStyle: "expanded"} ).on("error", sass.logError))
         .pipe(autoprefixer({
             browsers: ["last 2 versions"]
         }))
@@ -54,14 +54,16 @@ gulp.task("watch", gulp.parallel("watch:scss", "watch:html", "watch:js"));
 //browser sync, launched with sync
 gulp.task("browserSync", function(done) {
     browserSync.init({
-          server: "./app",
-          port: 8000 
+        port: 8000,
+        server: {baseDir: "./app",   
+        }
+        
     });
     done();
 });
 //sync task
 gulp.task("sync",
-    gulp.parallel("sass", "browserSync", gulp.parallel("watch"))
+    gulp.parallel( "browserSync", gulp.parallel("watch"))
 );
 
 //copy html and images
