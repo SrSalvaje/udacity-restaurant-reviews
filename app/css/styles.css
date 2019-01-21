@@ -246,6 +246,8 @@ nav h1 a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .inside header {
@@ -265,9 +267,23 @@ nav h1 a {
 }
 
 .inside #restaurant-container {
-  width: 100%;
+  width: 90%;
   height: auto;
-  padding: 0;
+  max-width: 490px;
+  padding: 20px 5px 10px;
+  margin: auto;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .inside #map {
@@ -276,15 +292,12 @@ nav h1 a {
   width: 100%;
 }
 
-.inside #footer {
-  bottom: 0;
-  width: 100%;
-}
-
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
-  font-size: 20pt;
+  font-size: 17pt;
+  -ms-flex-line-pack: center;
+      align-content: center;
   font-weight: 200;
   letter-spacing: 0;
   margin: 15px 0 30px;
@@ -294,6 +307,9 @@ nav h1 a {
 
 #restaurant-img {
   width: 90%;
+  height: auto;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 #restaurant-address {
@@ -323,6 +339,19 @@ nav h1 a {
 
 #reviews-container {
   padding: 30px 40px 80px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
 }
 
 #reviews-container h2 {
