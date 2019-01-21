@@ -1,7 +1,6 @@
 /* CSS Document */
 body, td, th, p {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 10pt;
   color: #333;
   line-height: 1.5;
 }
@@ -53,7 +52,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #footer {
   background-color: #444;
   color: #aaa;
-  font-size: 8pt;
   letter-spacing: 1px;
   padding: 25px;
   text-align: center;
@@ -236,7 +234,7 @@ nav h1 a {
 }
 
 /* ====================== Restaurant Details ====================== */
-.inside #maincontent {
+.inside {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -295,7 +293,6 @@ nav h1 a {
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
-  font-size: 17pt;
   -ms-flex-line-pack: center;
       align-content: center;
   font-weight: 200;
@@ -313,14 +310,13 @@ nav h1 a {
 }
 
 #restaurant-address {
-  font-size: 12pt;
   margin: 10px 0px;
+  padding: 0 0 5px 0;
 }
 
 #restaurant-cuisine {
   background-color: #333;
   color: #ddd;
-  font-size: 12pt;
   font-weight: 300;
   letter-spacing: 10px;
   margin: 0 0 20px;
@@ -335,6 +331,26 @@ nav h1 a {
   border-top: 1px solid #fff;
   padding: 140px 40px 30px;
   width: 50%;
+}
+
+#restaurant-hours {
+  width: 100%;
+}
+
+#restaurant-hours td {
+  border-bottom: 0.5px solid #e0e0e0;
+  padding: 5px 0;
+  font-weight: bold;
+  color: #666;
+  text-align: left;
+}
+
+#restaurant-hours td:nth-child(2) {
+  text-align: right;
+}
+
+#restaurant-hours td:nth-child(1) {
+  font-weight: bolder;
 }
 
 #reviews-container {
@@ -356,7 +372,6 @@ nav h1 a {
 
 #reviews-container h2 {
   color: #f58500;
-  font-size: 24pt;
   font-weight: 300;
   letter-spacing: -1px;
   padding-bottom: 1pt;
@@ -381,8 +396,133 @@ nav h1 a {
 
 #reviews-list li p {
   margin: 0 0 10px;
+  font-weight: 200;
+}
+
+#reviews-list li p:nth-child(3) {
+  color: black;
+  font-weight: bold;
+}
+
+/*responsive typography
+https://www.sassmeister.com/gist/7f22e44ace49b5124eec
+//  
+Indrek Paas @indrekpaas
+//
+//  Inspired by Mike Riethmuller's Precise control over responsive typography
+//  http://madebymike.com.au/writing/precise-control-responsive-typography/
+//
+//  Borrowed `strip-unit` function from Hugo Giraudel
+//  https://css-tricks.com/snippets/sass/strip-unit-function/
+*/
+#restaurant-name {
+  font-size: 25px;
+}
+
+@media (min-width: 300px) {
+  #restaurant-name {
+    font-size: calc(25px + 15 * (100vw - 300px) / 900);
+  }
+}
+
+@media (min-width: 1200px) {
+  #restaurant-name {
+    font-size: 40px;
+  }
+}
+
+#restaurant-address {
+  font-size: 20px;
+}
+
+@media (min-width: 300px) {
+  #restaurant-address {
+    font-size: calc(20px + 10 * (100vw - 300px) / 900);
+  }
+}
+
+@media (min-width: 1200px) {
+  #restaurant-address {
+    font-size: 30px;
+  }
+}
+
+#restaurant-cuisine {
+  font-size: 20px;
+}
+
+@media (min-width: 300px) {
+  #restaurant-cuisine {
+    font-size: calc(20px + 15 * (100vw - 300px) / 900);
+  }
+}
+
+@media (min-width: 1200px) {
+  #restaurant-cuisine {
+    font-size: 35px;
+  }
 }
 
 #restaurant-hours td {
-  color: #666;
+  font-size: 10px;
+}
+
+@media (min-width: 300px) {
+  #restaurant-hours td {
+    font-size: calc(10px + 10 * (100vw - 300px) / 900);
+  }
+}
+
+@media (min-width: 1200px) {
+  #restaurant-hours td {
+    font-size: 20px;
+  }
+}
+
+#reviews-container h2 {
+  font-size: 30px;
+}
+
+@media (min-width: 300px) {
+  #reviews-container h2 {
+    font-size: calc(30px + 30 * (100vw - 300px) / 900);
+  }
+}
+
+@media (min-width: 1200px) {
+  #reviews-container h2 {
+    font-size: 60px;
+  }
+}
+
+#reviews-list li p {
+  font-size: 15px;
+}
+
+@media (min-width: 300px) {
+  #reviews-list li p {
+    font-size: calc(15px + 5 * (100vw - 300px) / 900);
+  }
+}
+
+@media (min-width: 1200px) {
+  #reviews-list li p {
+    font-size: 20px;
+  }
+}
+
+.restHead a {
+  font-size: 15px;
+}
+
+@media (min-width: 300px) {
+  .restHead a {
+    font-size: calc(15px + 25 * (100vw - 300px) / 900);
+  }
+}
+
+@media (min-width: 1200px) {
+  .restHead a {
+    font-size: 40px;
+  }
 }

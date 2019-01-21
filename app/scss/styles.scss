@@ -3,7 +3,7 @@
 
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10pt;
+	//font-size: 10pt;
 	color: #333;
 	line-height: 1.5;
 }
@@ -45,7 +45,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #footer {
   background-color: #444;
   color: #aaa;
-  font-size: 8pt;
+  //font-size: 8pt;
   letter-spacing: 1px;
   padding: 25px;
   text-align: center;
@@ -207,13 +207,12 @@ nav h1 a {
 }
 
 /* ====================== Restaurant Details ====================== */
-.inside #maincontent {
+.inside {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-content: center;
-
-
+  
 }
 .inside header {
   //position: fixed;
@@ -240,10 +239,10 @@ nav h1 a {
   height:auto;
   max-width: 490px;
   padding: 20px 5px 10px;
- margin: auto;
- align-self: center;
- display: flex;
- flex-direction: column;
+  margin: auto;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 .inside #map {
@@ -255,7 +254,6 @@ nav h1 a {
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
-  font-size: 17pt;
   align-content: center;
   font-weight: 200;
   letter-spacing: 0;
@@ -269,13 +267,12 @@ nav h1 a {
   align-self: center;
 }
 #restaurant-address {
-  font-size: 12pt;
   margin: 10px 0px;
+  padding: 0 0 5px 0;
 }
 #restaurant-cuisine {
   background-color: #333;
   color: #ddd;
-  font-size: 12pt;
   font-weight: 300;
   letter-spacing: 10px;
   margin: 0 0 20px;
@@ -290,6 +287,25 @@ nav h1 a {
   padding: 140px 40px 30px;
   width: 50%;
 }
+
+#restaurant-hours{
+  width: 100%;
+}
+#restaurant-hours td {
+  border-bottom: 0.5px solid rgb(224, 224, 224);
+  padding:  5px 0;
+  font-weight: bold;
+  color: #666;
+  text-align: left;
+}
+
+#restaurant-hours td:nth-child(2){
+  text-align: right;
+} 
+
+#restaurant-hours td:nth-child(1){
+  font-weight: bolder; 
+}
 #reviews-container {
   padding: 30px 40px 80px;
   align-self: center;
@@ -300,7 +316,6 @@ nav h1 a {
 }
 #reviews-container h2 {
   color: #f58500;
-  font-size: 24pt;
   font-weight: 300;
   letter-spacing: -1px;
   padding-bottom: 1pt;
@@ -322,7 +337,73 @@ nav h1 a {
 }
 #reviews-list li p {
   margin: 0 0 10px;
+  font-weight: 200;
 }
+#reviews-list li p:nth-child(3){
+  color:black;
+  font-weight: bold;
+}
+
+
+/*responsive typography
+https://www.sassmeister.com/gist/7f22e44ace49b5124eec
+//  
+Indrek Paas @indrekpaas
+//
+//  Inspired by Mike Riethmuller's Precise control over responsive typography
+//  http://madebymike.com.au/writing/precise-control-responsive-typography/
+//
+//  Borrowed `strip-unit` function from Hugo Giraudel
+//  https://css-tricks.com/snippets/sass/strip-unit-function/
+*/
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  @each $property in $properties {
+    #{$property}: $min-value;
+  }
+
+  @media (min-width: $min-vw) {
+    @each $property in $properties {
+      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+    }
+  }
+
+  @media (min-width: $max-vw) {
+    @each $property in $properties {
+      #{$property}: $max-value;
+    }
+  }
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+#restaurant-name{
+  @include fluid-type(font-size, 300px, 1200px, 25px, 40px);
+}
+#restaurant-address{
+  @include fluid-type(font-size, 300px, 1200px, 20px, 30px);
+}
+#restaurant-cuisine{
+  @include fluid-type(font-size, 300px, 1200px, 20px, 35px);
+}
+
 #restaurant-hours td {
-  color: #666;
+  @include fluid-type(font-size, 300px, 1200px, 10px, 20px);
+}
+
+#reviews-container h2{
+  @include fluid-type(font-size, 300px, 1200px, 30px, 60px);
+}
+
+#reviews-list li p {
+  @include fluid-type(font-size, 300px, 1200px, 15px, 20px);
+}
+.restHead a{
+  @include fluid-type(font-size, 300px, 1200px, 15px, 40px);
+
 }
