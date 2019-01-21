@@ -2,18 +2,34 @@
     #restaurants-list {
         display:grid;
         grid-template-columns: auto auto;
-        grid-template: auto;
+        grid-template-rows: auto;
         grid-gap:20px;
         justify-content: space-evenly;
     }
 
-    #restaurants-list li{
+  /*   #restaurants-list li{
         width: auto;
-    }
+    } */
 }
 
 @media only screen and (min-width: 1000px) {
     #restaurants-list {
         grid-template-columns: auto auto auto;   
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #restaurants-list {
+        grid-template-columns: auto auto auto auto;   
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #restaurants-list {
+       grid-template-areas:  auto auto auto auto;     
+    }
+    #restaurants-list  {
+        max-width: 80%;
+        //align-self: center;
     }
 }
