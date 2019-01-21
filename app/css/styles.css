@@ -236,32 +236,49 @@ nav h1 a {
 }
 
 /* ====================== Restaurant Details ====================== */
+.inside #maincontent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .inside header {
-  position: fixed;
-  top: 0;
   width: 100%;
-  z-index: 1000;
+  height: auto;
+}
+
+.inside #breadcrumb {
+  width: 100%;
 }
 
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
-  right: 0;
-  top: 80px;
-  width: 50%;
+  height: auto;
+  position: initial;
+  width: 100%;
+}
+
+.inside #restaurant-container {
+  width: 100%;
+  height: auto;
+  padding: 0;
 }
 
 .inside #map {
   background-color: #ccc;
-  height: 100%;
+  height: 300px;
   width: 100%;
 }
 
 .inside #footer {
   bottom: 0;
-  position: absolute;
-  width: 50%;
+  width: 100%;
 }
 
 #restaurant-name {
