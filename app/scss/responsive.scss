@@ -1,4 +1,43 @@
+@media only screen and (min-width: 500px) {
+    
+    .inside #maincontent{
+        align-self: center;
+        width: 90%;
+        display: grid;
+        grid-template-areas:
+        "restC map"
+        "revC revC";
+        grid-template-columns: 60% 40%;
+    }
+    
+    .inside #map-container{
+        grid-area: map;
+    }
+    .inside #restaurant-container{
+        //width: 40%;
+        grid-area: restC;
+       
+    }
+    #reviews-container{
+        //width: 60%;
+        grid-area: revC;
+        width: 90%;
+        margin: auto;
+        padding: 0;
+        align-self: center;
+    }
+
+    .inside #map{
+        height: 100%;
+    }
+
+
+}
 @media only screen and (min-width: 700px) {
+    .inside #maincontent{
+        grid-template-columns: 40% 60%;
+
+    }
     #restaurants-list {
         display:grid;
         grid-template-columns: auto auto;
@@ -7,20 +46,39 @@
         justify-content: space-evenly;
     }
 
-  /*   #restaurants-list li{
+
+    #restaurants-list li{
         width: auto;
-    } */
+    }
+
+    #reviews-list{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+    }
+
+
 }
 
 @media only screen and (min-width: 1000px) {
     #restaurants-list {
         grid-template-columns: auto auto auto;   
     }
+    #reviews-list{
+        grid-template-columns: auto auto auto;
+        
+    }
 }
 
 @media only screen and (min-width: 1200px) {
     #restaurants-list {
         grid-template-columns: auto auto auto auto;   
+    }
+    .inside #maincontent {
+        max-width: 1200px;
+    }
+    .inside #map{
+        height: 100%;
     }
 }
 
