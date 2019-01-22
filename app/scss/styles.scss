@@ -168,7 +168,7 @@ nav h1 a {
   min-height: 350px;
   padding: 0 30px 25px;
   text-align: left;
-  max-width: 470px;
+  //max-width: 390px;
   width: 90%;
 }
 #restaurants-list .restaurant-img {
@@ -393,7 +393,7 @@ Indrek Paas @indrekpaas
 }
 
 #restaurant-hours td {
-  @include fluid-type(font-size, 300px, 1200px, 10px, 20px);
+  @include fluid-type(font-size, 300px, 1200px, 12px, 20px);
 }
 
 #reviews-container h2{

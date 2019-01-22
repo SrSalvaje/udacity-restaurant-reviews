@@ -62,7 +62,10 @@
     grid-template-columns: auto auto auto auto;
   }
   .inside #maincontent {
-    max-width: 1100px;
+    max-width: 1200px;
+  }
+  .inside #map {
+    height: 100%;
   }
 }
 

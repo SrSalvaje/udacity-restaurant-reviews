@@ -191,7 +191,6 @@ nav h1 a {
   min-height: 350px;
   padding: 0 30px 25px;
   text-align: left;
-  max-width: 470px;
   width: 90%;
 }
 
@@ -464,12 +463,12 @@ Indrek Paas @indrekpaas
 }
 
 #restaurant-hours td {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 @media (min-width: 300px) {
   #restaurant-hours td {
-    font-size: calc(10px + 10 * (100vw - 300px) / 900);
+    font-size: calc(12px + 8 * (100vw - 300px) / 900);
   }
 }
 
