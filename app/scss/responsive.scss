@@ -14,160 +14,176 @@
 
 //mixin
 @mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+@each $property in $properties {
+    #{$property}: $min-value;
+}
+
+@media (min-width: $min-vw) {
     @each $property in $properties {
-      #{$property}: $min-value;
+    #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
     }
-  
-    @media (min-width: $min-vw) {
-      @each $property in $properties {
-        #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
-      }
+}
+
+@media (min-width: $max-vw) {
+    @each $property in $properties {
+    #{$property}: $max-value;
     }
-  
-    @media (min-width: $max-vw) {
-      @each $property in $properties {
-        #{$property}: $max-value;
-      }
-    }
-  }
-  
-  @function strip-unit($number) {
-    @if type-of($number) == "number" and not unitless($number) {
-      @return $number / ($number * 0 + 1);
-    }
-  
-    @return $number;
-  }
-  //breakpoints for typography
-  //homepage
-  nav h1 a {
+}
+}
+
+@function strip-unit($number) {
+@if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+@return $number;
+}
+//breakpoints for typography
+//homepage
+nav h1 a {
     @include fluid-type(font-size, 320px, 1200px, 19px, 50px);
+}
 
-  }
-
-  .filter-options h2  {
+.filter-options h2  {
     @include fluid-type(font-size, 320px, 1200px, 18px, 25px);
-  }
+}
 
- 
-  //restaurant details
-  #restaurant-name{
-    @include fluid-type(font-size, 300px, 1200px, 25px, 40px);
-  }
-  #restaurant-address{
-    @include fluid-type(font-size, 300px, 1200px, 20px, 30px);
-  }
-  #restaurant-cuisine{
-    @include fluid-type(font-size, 300px, 1200px, 20px, 35px);
-  }
-  
-  #restaurant-hours td {
-    @include fluid-type(font-size, 300px, 1200px, 12px, 20px);
-  }
-  
-  #reviews-container h2{
-    @include fluid-type(font-size, 300px, 1200px, 30px, 60px);
-  }
-  
-  #reviews-list li p {
-    @include fluid-type(font-size, 300px, 1200px, 15px, 20px);
-  }
-  .restHead a{
-    @include fluid-type(font-size, 300px, 1200px, 15px, 40px);
-  
-  }
-  
+#restaurants-list li h1{
+    @include fluid-type(font-size, 320px, 1200px, 19px, 23px); 
+}
+
+#restaurants-list p {
+    @include fluid-type(font-size, 320px, 1200px, 15px, 17px);
+}
+
+#footer{
+    @include fluid-type(font-size, 320px, 1200px, 10px, 17px);
+}
+
+//restaurant details
+#restaurant-name{
+@include fluid-type(font-size, 300px, 1200px, 25px, 40px);
+}
+#restaurant-address{
+@include fluid-type(font-size, 300px, 1200px, 20px, 30px);
+}
+#restaurant-cuisine{
+@include fluid-type(font-size, 300px, 1200px, 20px, 35px);
+}
+
+#restaurant-hours td {
+@include fluid-type(font-size, 300px, 1200px, 12px, 20px);
+}
+
+#reviews-container h2{
+@include fluid-type(font-size, 300px, 1200px, 30px, 60px);
+}
+
+#reviews-list li p {
+@include fluid-type(font-size, 300px, 1200px, 15px, 20px);
+}
+.restHead a{
+@include fluid-type(font-size, 300px, 1200px, 15px, 40px);
+
+}
+
+@media only screen and (min-width: 400px) {
+#restaurants-list li {
+    padding: 0 30px 25px;
+}
+}
+
 @media only screen and (min-width: 500px) {
-    
-    .inside #maincontent{
-        align-self: center;
-        width: 90%;
-        display: grid;
-        grid-template-areas:
-        "restC map"
-        "revC revC";
-        grid-template-columns: 60% 40%;
-    }
-    
-    .inside #map-container{
-        grid-area: map;
-    }
-    .inside #restaurant-container{
-        //width: 40%;
-        grid-area: restC;
-       
-    }
-    #reviews-container{
-        //width: 60%;
-        grid-area: revC;
-        width: 90%;
-        margin: auto;
-        padding: 0;
-        align-self: center;
-    }
 
-    .inside #map{
-        height: 100%;
-    }
+.inside #maincontent{
+    align-self: center;
+    width: 90%;
+    display: grid;
+    grid-template-areas:
+    "restC map"
+    "revC revC";
+    grid-template-columns: 60% 40%;
+}
+
+.inside #map-container{
+    grid-area: map;
+}
+.inside #restaurant-container{
+    //width: 40%;
+    grid-area: restC;
+    
+}
+#reviews-container{
+    //width: 60%;
+    grid-area: revC;
+    width: 90%;
+    margin: auto;
+    padding: 0;
+    align-self: center;
+}
+
+.inside #map{
+    height: 100%;
+}
 
 
 }
 @media only screen and (min-width: 700px) {
-    .inside #maincontent{
-        grid-template-columns: 40% 60%;
+.inside #maincontent{
+    grid-template-columns: 40% 60%;
 
-    }
-    #restaurants-list {
-        display:grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: auto;
-        grid-gap:20px;
-        justify-content: space-evenly;
-    }
+}
+#restaurants-list {
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-gap:20px;
+    justify-content: space-evenly;
+}
 
 
-    #restaurants-list li{
-        width: auto;
-    }
+#restaurants-list li{
+    width: auto;
+}
 
-    #reviews-list{
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: auto;
-    }
+#reviews-list{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+}
 
 
 }
 
 @media only screen and (min-width: 1000px) {
-    #restaurants-list {
-        grid-template-columns: auto auto auto;   
-    }
-    #reviews-list{
-        grid-template-columns: auto auto auto;
-        
-    }
+#restaurants-list {
+    grid-template-columns: auto auto auto;   
+}
+#reviews-list{
+    grid-template-columns: auto auto auto;
+    
+}
 }
 
 @media only screen and (min-width: 1200px) {
-    #restaurants-list {
-        grid-template-columns: auto auto auto auto;   
-    }
-    .inside #maincontent {
-        max-width: 1200px;
-    }
-    .inside #map{
-        height: 100%;
-    }
+#restaurants-list {
+    grid-template-columns: auto auto auto auto;   
+}
+.inside #maincontent {
+    max-width: 1200px;
+}
+.inside #map{
+    height: 100%;
+}
 }
 
 @media only screen and (min-width: 1800px) {
-    #restaurants-list {
-       grid-template-areas:  auto auto auto auto;     
-    }
-    #restaurants-list  {
-        max-width: 80%;
-        //align-self: center;
-    }
-    
+#restaurants-list {
+    grid-template-areas:  auto auto auto auto;     
+}
+#restaurants-list  {
+    max-width: 80%;
+    //align-self: center;
+}
+
 }
