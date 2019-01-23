@@ -1,3 +1,159 @@
+/*                            responsive typography!!!
+//  
+//  By Indrek Paas @indrekpaas 
+// taken from: https://www.sassmeister.com/gist/7f22e44ace49b5124eec
+//  
+// @indrekpaas note:
+//  "Inspired by Mike Riethmuller's Precise control over responsive typography
+//  http://madebymike.com.au/writing/precise-control-responsive-typography/
+//
+//  Borrowed `strip-unit` function from Hugo Giraudel
+//  https://css-tricks.com/snippets/sass/strip-unit-function/"
+*/
+nav h1 a {
+  font-size: 19px;
+}
+
+@media (min-width: 320px) {
+  nav h1 a {
+    font-size: calc(19px + 31 * (100vw - 320px) / 880);
+  }
+}
+
+@media (min-width: 1200px) {
+  nav h1 a {
+    font-size: 50px;
+  }
+}
+
+.filter-options h2 {
+  font-size: 18px;
+}
+
+@media (min-width: 320px) {
+  .filter-options h2 {
+    font-size: calc(18px + 7 * (100vw - 320px) / 880);
+  }
+}
+
+@media (min-width: 1200px) {
+  .filter-options h2 {
+    font-size: 25px;
+  }
+}
+
+#restaurant-name {
+  font-size: 25px;
+}
+
+@media (min-width: 300px) {
+  #restaurant-name {
+    font-size: calc(25px + 15 * (100vw - 300px) / 900);
+  }
+}
+
+@media (min-width: 1200px) {
+  #restaurant-name {
+    font-size: 40px;
+  }
+}
+
+#restaurant-address {
+  font-size: 20px;
+}
+
+@media (min-width: 300px) {
+  #restaurant-address {
+    font-size: calc(20px + 10 * (100vw - 300px) / 900);
+  }
+}
+
+@media (min-width: 1200px) {
+  #restaurant-address {
+    font-size: 30px;
+  }
+}
+
+#restaurant-cuisine {
+  font-size: 20px;
+}
+
+@media (min-width: 300px) {
+  #restaurant-cuisine {
+    font-size: calc(20px + 15 * (100vw - 300px) / 900);
+  }
+}
+
+@media (min-width: 1200px) {
+  #restaurant-cuisine {
+    font-size: 35px;
+  }
+}
+
+#restaurant-hours td {
+  font-size: 12px;
+}
+
+@media (min-width: 300px) {
+  #restaurant-hours td {
+    font-size: calc(12px + 8 * (100vw - 300px) / 900);
+  }
+}
+
+@media (min-width: 1200px) {
+  #restaurant-hours td {
+    font-size: 20px;
+  }
+}
+
+#reviews-container h2 {
+  font-size: 30px;
+}
+
+@media (min-width: 300px) {
+  #reviews-container h2 {
+    font-size: calc(30px + 30 * (100vw - 300px) / 900);
+  }
+}
+
+@media (min-width: 1200px) {
+  #reviews-container h2 {
+    font-size: 60px;
+  }
+}
+
+#reviews-list li p {
+  font-size: 15px;
+}
+
+@media (min-width: 300px) {
+  #reviews-list li p {
+    font-size: calc(15px + 5 * (100vw - 300px) / 900);
+  }
+}
+
+@media (min-width: 1200px) {
+  #reviews-list li p {
+    font-size: 20px;
+  }
+}
+
+.restHead a {
+  font-size: 15px;
+}
+
+@media (min-width: 300px) {
+  .restHead a {
+    font-size: calc(15px + 25 * (100vw - 300px) / 900);
+  }
+}
+
+@media (min-width: 1200px) {
+  .restHead a {
+    font-size: 40px;
+  }
+}
+
 @media only screen and (min-width: 500px) {
   .inside #maincontent {
     align-self: center;
