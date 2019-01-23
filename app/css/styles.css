@@ -72,15 +72,22 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 
 /* ====================== Navigation ====================== */
-.skip-link {
+.skip-link, .skip-linkf {
   display: block;
   position: absolute;
   top: -40px;
-  left: 0;
   background: black;
   color: white;
   padding: 8px;
   z-index: 100;
+}
+
+.skip-linkf {
+  left: -1000px;
+}
+
+.skip-linkf:focus {
+  left: 0;
 }
 
 .skip-link:focus {

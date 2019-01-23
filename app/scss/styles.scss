@@ -57,17 +57,26 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   align-items: center;
 }
 /* ====================== Navigation ====================== */
-.skip-link{
+.skip-link, .skip-linkf{
   display: block;
   position: absolute;
-  top: -40px;
-  left: 0;
+  top:-40px;
+  
   background:black;
   color: white;
   padding: 8px;
   z-index: 100;
 
 }
+.skip-linkf{
+  left: -1000px;
+
+}
+
+.skip-linkf:focus{
+  left:0;
+} 
+
 
  .skip-link:focus{
   top:0;
@@ -257,6 +266,7 @@ li p:nth-of-type(2){
     #breadcrumb{
       width: 100%;
     }
+   
     #maincontent{
       position: relative;
       top: 130px;
