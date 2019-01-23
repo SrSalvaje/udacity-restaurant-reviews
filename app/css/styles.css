@@ -307,8 +307,14 @@ li p:nth-of-type(2) {
   width: 100%;
 }
 
+.inside #map {
+  background-color: #ccc;
+  height: 300px;
+  width: 100%;
+}
+
 .inside #restaurant-container {
-  width: 90%;
+  width: 100%;
   height: auto;
   max-width: 490px;
   padding: 20px 5px 10px;
@@ -327,10 +333,11 @@ li p:nth-of-type(2) {
           align-items: center;
 }
 
-.inside #map {
-  background-color: #ccc;
-  height: 300px;
-  width: 100%;
+#restaurant-container, #reviews-container {
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #fff;
+  padding: 140px 40px 30px;
+  width: 50%;
 }
 
 #restaurant-name {
@@ -367,13 +374,6 @@ li p:nth-of-type(2) {
   text-align: center;
   text-transform: uppercase;
   width: 90%;
-}
-
-#restaurant-container, #reviews-container {
-  border-bottom: 1px solid #d9d9d9;
-  border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
-  width: 50%;
 }
 
 #restaurant-hours {
