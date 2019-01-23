@@ -7,7 +7,8 @@ const gulp = require("gulp"),
     uglify = require("gulp-uglify"),
     sourcemaps = require("gulp-sourcemaps"),
     jasmineBrowser = require("gulp-jasmine-browser"),
-    imagemin = require("gulp-imagemin");
+    imagemin = require("gulp-imagemin"),
+    pngquant = require('imagemin');
 
 //sass and prefixer; launched with sync command
 gulp.task("sass", function(done) {
@@ -74,8 +75,8 @@ gulp.task("copy-html", function(done){
 });
 
 gulp.task("copy-images", function(done){
-    gulp.src("app/images/*")
-        .pipe(gulp.dest("dist/images"));
+    gulp.src("app/img/*")
+        .pipe(gulp.dest("dist/img"));
     done();
 });
 
@@ -121,10 +122,10 @@ gulp.task("tests", function() {
 
 //imagemin
 gulp.task("default", function() {
-    return gulp.src("src/images/*")
+    return gulp.src("app/img/*")
         .pipe(imagemin({
             progressive: true,
             use: [pngquant()]
         }))
-        .pipe(gulp.dest("dist/images"));
+        .pipe(gulp.dest("dist/img"));
 });
