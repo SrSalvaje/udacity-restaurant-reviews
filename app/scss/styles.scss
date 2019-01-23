@@ -247,8 +247,10 @@ li p:nth-of-type(2){
   flex-direction: column;
   align-content: center;
     header{
+      position: fixed;
+      top: 0;
       width: 100%;
-    //z-index: 1000;
+      z-index: 1000;
       height: auto;
     }
 
@@ -259,9 +261,13 @@ li p:nth-of-type(2){
     #map-container {
       background: blue none repeat scroll 0 0;
       height: auto;
-      position: initial;
+      //position: initial;
       //right: 0;
       //top: 80px;
+      width: 100%;
+      position: relative;
+  
+      bottom: -140px;
       width: 100%;
     }
 
@@ -269,6 +275,7 @@ li p:nth-of-type(2){
       background-color: #ccc;
       height: 300px;
       width: 100%;
+      z-index:100;
     }
 
     #restaurant-container{
@@ -281,16 +288,30 @@ li p:nth-of-type(2){
       display: flex;
       flex-direction: column;
       align-items: center;
+      
+    }
+    #footer{
+      position:relative;
+      top:120px;
     }
 }
 #restaurant-container, #reviews-container {
+  position: relative;
+  top:120px;
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
 }
 
 
+ 
+$restContent: "#restaurant-name, #restaurant-img";
+
+#{$restContent}{
+  padding: 0 10px 0;
+}
 
 #restaurant-name {
+ 
   color: #f18200;
   font-family: Arial,sans-serif;
   align-content: center;
@@ -327,7 +348,7 @@ li p:nth-of-type(2){
 }
 #restaurant-hours td {
   border-bottom: 0.5px solid rgb(224, 224, 224);
-  padding:  5px 0;
+  padding:  5px 10px;
   font-weight: bold;
   color: #666;
   text-align: left;
