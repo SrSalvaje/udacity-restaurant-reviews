@@ -257,17 +257,15 @@ li p:nth-of-type(2){
     #breadcrumb{
       width: 100%;
     }
-
+    
     #map-container {
       background: blue none repeat scroll 0 0;
       height: auto;
-      //position: initial;
       //right: 0;
       //top: 80px;
       width: 100%;
       position: relative;
-  
-      bottom: -140px;
+      top: 140px;
       width: 100%;
     }
 
@@ -289,15 +287,16 @@ li p:nth-of-type(2){
       flex-direction: column;
       align-items: center;
       
+      
     }
-    #footer{
+     #footer{
       position:relative;
-      top:120px;
-    }
+      top:140px;
+    } 
 }
 #restaurant-container, #reviews-container {
   position: relative;
-  top:120px;
+  top: 140px;
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
 }
@@ -386,7 +385,7 @@ $restContent: "#restaurant-name, #restaurant-img";
   margin: 0 0 30px;
   overflow: hidden;
   padding: 0 20px 20px;
-  position: relative;
+  //position: relative;
   width: 85%;
 }
 #reviews-list li p {
