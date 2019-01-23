@@ -275,7 +275,7 @@ li p:nth-of-type(2){
       width: 100%;
       height:auto;
       max-width: 490px;
-      padding: 20px 5px 10px;
+      padding: 20px 0px 10px;
       margin: auto;
       align-self: center;
       display: flex;
@@ -286,8 +286,6 @@ li p:nth-of-type(2){
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
-  width: 50%;
 }
 
 
@@ -343,12 +341,11 @@ li p:nth-of-type(2){
   font-weight: bolder; 
 }
 #reviews-container {
-  padding: 30px 40px 80px;
   align-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
+  width: 100%;
 }
 #reviews-container h2 {
   color: #f58500;
