@@ -61,6 +61,15 @@ nav h1 a {
 }
 
 //restaurant details
+.inside #breadcrumb{
+    a, li {
+        @include fluid-type(font-size, 300px, 1200px, 15px, 20px);
+    }
+}
+
+.inside #breadcrumb li{
+
+}
 #restaurant-name{
 @include fluid-type(font-size, 300px, 1200px, 25px, 40px);
 }
@@ -125,12 +134,18 @@ nav h1 a {
 .inside #map{
     height: 100%;
 }
+#restaurant-name{
+    width: 90%;
+}
+#restaurant-address{
+    padding: 0 0 5px 20px;
 
+}
 
 }
 @media only screen and (min-width: 700px) {
 .inside #maincontent{
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 50% 50%;
 
 }
 #restaurants-list {
@@ -152,7 +167,22 @@ nav h1 a {
     grid-template-rows: auto;
 }
 
+#reviews-list li{
+    width: auto;
+}
+}
 
+@media only screen and (min-width:900px){
+    .inside #maincontent{
+        grid-template-areas:
+            "restC map"
+            "infor infor"
+            "revC revC";
+    }
+    #restaurant-address, #restaurant-hours{
+        grid-area: infor;
+    }
+    
 }
 
 @media only screen and (min-width: 1000px) {

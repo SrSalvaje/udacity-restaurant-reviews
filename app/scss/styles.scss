@@ -394,16 +394,21 @@ $restContent: "#restaurant-name, #restaurant-img";
     border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
-  margin: 0 0 30px;
-  overflow: hidden;
+  margin: 0 0 0px;
+  overflow: auto;
   padding: 0 20px 20px;
   //position: relative;
   width: 85%;
+  margin:10px;
+  height:300px;
 }
+
+
 #reviews-list li p {
   margin: 0 0 10px;
   font-weight: 200;
 }
+
 #reviews-list li p:nth-child(3){
   color:black;
   font-weight: bold;

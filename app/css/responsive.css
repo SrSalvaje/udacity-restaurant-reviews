@@ -90,6 +90,22 @@ nav h1 a {
   }
 }
 
+.inside #breadcrumb a, .inside #breadcrumb li {
+  font-size: 15px;
+}
+
+@media (min-width: 300px) {
+  .inside #breadcrumb a, .inside #breadcrumb li {
+    font-size: calc(15px + 5 * (100vw - 300px) / 900);
+  }
+}
+
+@media (min-width: 1200px) {
+  .inside #breadcrumb a, .inside #breadcrumb li {
+    font-size: 20px;
+  }
+}
+
 #restaurant-name {
   font-size: 25px;
 }
@@ -233,11 +249,17 @@ nav h1 a {
   .inside #map {
     height: 100%;
   }
+  #restaurant-name {
+    width: 90%;
+  }
+  #restaurant-address {
+    padding: 0 0 5px 20px;
+  }
 }
 
 @media only screen and (min-width: 700px) {
   .inside #maincontent {
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 50% 50%;
   }
   #restaurants-list {
     display: grid;
@@ -255,6 +277,18 @@ nav h1 a {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto;
+  }
+  #reviews-list li {
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .inside #maincontent {
+    grid-template-areas: "restC map" "infor infor" "revC revC";
+  }
+  #restaurant-address, #restaurant-hours {
+    grid-area: infor;
   }
 }
 
