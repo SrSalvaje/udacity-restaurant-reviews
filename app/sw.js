@@ -17,6 +17,18 @@ let allCaches=[
         "/data/restaurants.json"
     ];
 
+function cachedImg(request) {
+    let imgUrl = request.url;
+    return caches.open(imgCache).then(function(cache) {
+        return cache.match(imgUrl).then(function(response){
+            return response || fetch(request).then(function(networkResponse){
+                cache.put(imgUrl, networkResponse.clone());
+                return networkResponse;
+            });
+        });
+    });
+}
+
 //cache assets on installation
 self.addEventListener("install", function(event) {
     event.waitUntil(
@@ -43,6 +55,19 @@ self.addEventListener("activate", function(event) {
 
 //intercept fetch requests
 self.addEventListener("fetch", function(event) {
+    const urlRequests = new URL(event.request.url);
+    if(urlRequests.origin === location.origin) {
+        if (urlRequests.pathname.startsWith("/restaurant.html")) {
+            event.respondWith(caches.match("/restaurant.html"));
+            return;
+        }
+
+        if(urlRequests.pathname.startsWith("/img")) {
+            event.respondWith(cachedImg(event.request));
+            return;
+        }
+    }
+
     event.respondWith(
         caches.match(event.request).then(function(response) {
             if(response) {
