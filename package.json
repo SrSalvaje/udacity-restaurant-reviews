@@ -1,0 +1,39 @@
+{
+  "name": "startkit",
+  "version": "1.0.0",
+  "description": "managa nodejs for my startkit used for FEND\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D\u001b[D\u001b[D\u001b[D\u001b[De\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[ applications for my startkit for FEND",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SrSalvaje/startkit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SrSalvaje/startkit/issues"
+  },
+  "homepage": "https://github.com/SrSalvaje/startkit#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.24.6",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-uglify": "^3.0.1",
+    "jasmine": "^3.3.1"
+  },
+  "dependencies": {
+    "gulp-concat": "^2.6.1",
+    "gulp-jasmine-browser": "^4.1.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "imagemin-pngquant": "^7.0.0",
+    "pump": "^3.0.0",
+    "puppeteer": "^1.11.0"
+  }
+}
