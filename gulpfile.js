@@ -52,7 +52,7 @@ gulp.task("watch", gulp.parallel("watch:scss", "watch:html", "watch:js"));
 //browser sync, launched with sync
 gulp.task("browserSync", function(done) {
     browserSync.init({
-        port: 8880,
+        port: 8000,
         server: {baseDir: "./app",   
         }
         
