@@ -1,5 +1,11 @@
+
+/* Shout out to Jake Archibald, Alexandro Perez and Mathew Cranford for their tutorials on service workers
+*https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/
+*https://alexandroperez.github.io/mws-walkthrough/?1.25.fixing-offline-mode
+*https://matthewcranford.com/restaurant-reviews-app-walkthrough-part-4-service-workers/  
+*/
 const appName="Udacity-Restaurant-Reviews",
-    staticCacheName=`${appName}-v1.0`,
+    staticCacheName=`${appName}-v1.5`,
     imgCache = `${appName}-images`;
 let allCaches=[
         staticCacheName,
@@ -67,7 +73,6 @@ self.addEventListener("fetch", function(event) {
             return;
         }
     }
-
     event.respondWith(
         caches.match(event.request).then(function(response) {
             if(response) {

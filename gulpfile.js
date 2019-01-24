@@ -1,14 +1,14 @@
 const gulp = require("gulp"),
     sass = require("gulp-sass"),
-    autoprefixer = require("gulp-autoprefixer"), //not supported by source maps
-    browserSync = require("browser-sync").create(), //do i need to remove it from sass?
+    autoprefixer = require("gulp-autoprefixer"), 
+    browserSync = require("browser-sync").create(), 
     concat= require("gulp-concat"),
     babel = require("gulp-babel"),
     uglify = require("gulp-uglify"),
     sourcemaps = require("gulp-sourcemaps"),
     jasmineBrowser = require("gulp-jasmine-browser"),
     imagemin = require("gulp-imagemin"),
-    pngquant = require('imagemin');
+    pngquant = require("imagemin");
 
 //sass and prefixer; launched with sync command
 gulp.task("sass", function(done) {
@@ -47,9 +47,6 @@ gulp.task("jsw", function(done){
     done(); 
 });
 
-
-
-
 gulp.task("watch", gulp.parallel("watch:scss", "watch:html", "watch:js"));
 
 //browser sync, launched with sync
@@ -85,8 +82,6 @@ gulp.task("copy-css", function(done){
         .pipe(gulp.dest("dist/css"));
     done();
 });
-
-
 
 //js concantenation, transpiling and minification
 gulp.task("scripts", function(){
