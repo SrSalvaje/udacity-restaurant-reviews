@@ -27,7 +27,7 @@ self.addEventListener("install", function(event) {
 });
 
 //delete previous caches (based on version)//
-/* self.addEventListener("activate", function(event) {
+self.addEventListener("activate", function(event) {
     event.waitUntil(
         caches.keys().then(function(cacheNames) {
             return Promise.all(
@@ -39,4 +39,4 @@ self.addEventListener("install", function(event) {
             );
         })
     );
-}); */ 
+}); 
