@@ -238,6 +238,9 @@ nav h1 a {
   .inside #restaurant-container {
     grid-area: restC;
   }
+  .inside #map {
+    height: 100%;
+  }
   #reviews-container {
     grid-area: revC;
     width: 90%;
@@ -245,9 +248,6 @@ nav h1 a {
     padding: 0;
     -ms-flex-item-align: center;
         align-self: center;
-  }
-  .inside #map {
-    height: 100%;
   }
   #restaurant-name {
     width: 90%;
@@ -280,15 +280,6 @@ nav h1 a {
   }
   #reviews-list li {
     width: auto;
-  }
-}
-
-@media only screen and (min-width: 900px) {
-  .inside #maincontent {
-    grid-template-areas: "restC map" "infor infor" "revC revC";
-  }
-  #restaurant-address, #restaurant-hours {
-    grid-area: infor;
   }
 }
 
