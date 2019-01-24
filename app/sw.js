@@ -40,3 +40,18 @@ self.addEventListener("activate", function(event) {
         })
     );
 }); 
+
+//intercept fetch requests
+self.addEventListener("fetch", function(event) {
+    event.respondWith(
+        caches.match(event.request).then(function(response) {
+            if(response) {
+                console.log(`found ${event.request}`);
+                return response;
+            } else{
+                console.log(`Couldn´t find cached ${event.request}`);
+                return fetch(event.request);
+            }   
+        })
+    ); 
+});
