@@ -84,7 +84,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
  */
 initMap = () => {
 
-    if(navigator.online) {
+    if(navigator.onLine) {
         try{
             self.newMap = L.map("map", {
                 center: [40.722216, -73.987501],
