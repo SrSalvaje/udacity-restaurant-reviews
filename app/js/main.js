@@ -171,7 +171,7 @@ createRestaurantHTML = (restaurant) => {
     image.alt=`Picture of ${restaurant.name}`;
     li.append(image);
 
-    const name = document.createElement("h1");
+    const name = document.createElement("h2");
     name.innerHTML = restaurant.name;
     li.append(name);
 
@@ -195,6 +195,7 @@ createRestaurantHTML = (restaurant) => {
 /**
  * Add markers for current restaurants to the map.
  */
+
 addMarkersToMap = (restaurants = self.restaurants) => {
     if(!newMap || !L){ //if undefined, then exit function
         return;
