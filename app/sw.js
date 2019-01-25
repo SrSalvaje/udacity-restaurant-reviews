@@ -5,7 +5,7 @@
 *https://matthewcranford.com/restaurant-reviews-app-walkthrough-part-4-service-workers/  
 */
 const appName="Udacity-Restaurant-Reviews",
-    staticCacheName=`${appName}-v1.8`,
+    staticCacheName=`${appName}-v1.9`,
     imgCache = `${appName}-images`;
 let allCaches=[
         staticCacheName,
@@ -50,7 +50,9 @@ self.addEventListener("activate", function(event) {
         caches.keys().then(function(cacheNames) {
             return Promise.all(
                 cacheNames.filter(function(cacheName){
-                    return cacheName.startsWith(appName) && !allCaches.includes(cacheName);
+                    if(cacheName.startsWith(appName) && !allCaches.includes(cacheName)){
+                        return cacheName;
+                    }
                 }).map(function(cacheName) {
                     return caches.delete(cacheName);
                 })   

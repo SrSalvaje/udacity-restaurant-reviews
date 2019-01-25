@@ -42,18 +42,18 @@ nav h1 a {
   }
 }
 
-#restaurants-list li h1 {
+#restaurants-list li h2 {
   font-size: 19px;
 }
 
 @media (min-width: 320px) {
-  #restaurants-list li h1 {
+  #restaurants-list li h2 {
     font-size: calc(19px + 4 * (100vw - 320px) / 880);
   }
 }
 
 @media (min-width: 1200px) {
-  #restaurants-list li h1 {
+  #restaurants-list li h2 {
     font-size: 23px;
   }
 }
@@ -170,18 +170,18 @@ nav h1 a {
   }
 }
 
-#reviews-container h2 {
+#reviews-container h3 {
   font-size: 30px;
 }
 
 @media (min-width: 300px) {
-  #reviews-container h2 {
+  #reviews-container h3 {
     font-size: calc(30px + 30 * (100vw - 300px) / 900);
   }
 }
 
 @media (min-width: 1200px) {
-  #reviews-container h2 {
+  #reviews-container h3 {
     font-size: 60px;
   }
 }
