@@ -5,7 +5,7 @@
 *https://matthewcranford.com/restaurant-reviews-app-walkthrough-part-4-service-workers/  
 */
 const appName="Udacity-Restaurant-Reviews",
-    staticCacheName=`${appName}-v2`,
+    staticCacheName=`${appName}-v2.1`,
     imgCache = `${appName}-images`;
 let allCaches=[
         staticCacheName,
