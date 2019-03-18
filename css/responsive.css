@@ -229,7 +229,8 @@ nav h1 a {
     align-self: center;
     width: 90%;
     display: grid;
-    grid-template-areas: "restC map" "revC revC";
+    grid-template-areas: "restC map"
+ "revC revC";
     grid-template-columns: 60% 40%;
   }
   .inside #map-container {
@@ -285,7 +286,7 @@ nav h1 a {
 
 @media only screen and (min-width: 1000px) {
   .inside {
-    background: url(/img/super-food.jpg) no-repeat center center fixed;
+    background: url(../img/super-food.jpg) no-repeat center center fixed;
   }
   #restaurants-list {
     grid-template-columns: auto auto auto;
