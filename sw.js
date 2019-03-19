@@ -65,12 +65,12 @@ self.addEventListener("activate", function(event) {
 self.addEventListener("fetch", function(event) {
     const urlRequests = new URL(event.request.url);
     if(urlRequests.origin === location.origin) {
-        if (urlRequests.pathname.startsWith("/restaurant.html")) {
-            event.respondWith(caches.match("/restaurant.html"));
+        if (urlRequests.pathname.startsWith("/udacity-restaurant-reviews/restaurant.html")) {
+            event.respondWith(caches.match("/udacity-restaurant-reviews/restaurant.html"));
             return;
         }
 
-        if(urlRequests.pathname.startsWith("/img")) {
+        if(urlRequests.pathname.startsWith("/udacity-restaurant-reviews/img")) {
             event.respondWith(cachedImg(event.request));
             return;
         }
