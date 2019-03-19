@@ -5,22 +5,22 @@
 *https://matthewcranford.com/restaurant-reviews-app-walkthrough-part-4-service-workers/  
 */
 const appName="Udacity-Restaurant-Reviews",
-    staticCacheName=`${appName}-v2.1`,
+    staticCacheName=`${appName}-v2.2`,
     imgCache = `${appName}-images`;
 let allCaches=[
         staticCacheName,
         imgCache
     ],
     filesToCache=[
-        "/",
-        "/index.html",
-        "/restaurant.html",
-        "/css/styles.css",
-        "/css/responsive.css",
-        "/js/dbhelper.js",
-        "/js/main.js",
-        "/js/restaurant_info.js",
-        "/data/restaurants.json"
+        "https://srsalvaje.github.io/udacity-restaurant-reviews/",
+        "https://srsalvaje.github.io/udacity-restaurant-reviews/index.html",
+        "https://srsalvaje.github.io/udacity-restaurant-reviews/restaurant.html",
+        "https://srsalvaje.github.io/udacity-restaurant-reviews/css/styles.css",
+        "https://srsalvaje.github.io/udacity-restaurant-reviews/css/responsive.css",
+        "https://srsalvaje.github.io/udacity-restaurant-reviews/js/dbhelper.js",
+        "https://srsalvaje.github.io/udacity-restaurant-reviews/js/main.js",
+        "https://srsalvaje.github.io/udacity-restaurant-reviews/js/restaurant_info.js",
+        "https://srsalvaje.github.io/udacity-restaurant-reviews/data/restaurants.json"
     ];
 
 function cachedImg(request) {
