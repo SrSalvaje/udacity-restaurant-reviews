@@ -7,7 +7,7 @@ var markers = [];
 
 if ("serviceWorker" in navigator){
     navigator.serviceWorker
-        .register("/sw.js").then(function(reg) {
+        .register("https://srsalvaje.github.io/udacity-restaurant-reviews/sw.js").then(function(reg) {
             console.log("sw registered");
         }).catch((err) => {
             console.error(`Couldnt register sw...
