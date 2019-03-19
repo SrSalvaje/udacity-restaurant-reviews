@@ -64,13 +64,14 @@ self.addEventListener("activate", function(event) {
 //intercept fetch requests
 self.addEventListener("fetch", function(event) {
     const urlRequests = new URL(event.request.url);
+    console.log(event.request.url);
     if(urlRequests.origin === location.origin) {
-        if (urlRequests.pathname.startsWith("udacity-restaurant-reviews/restaurant.html")) {
-            event.respondWith(caches.match("udacity-restaurant-reviews/restaurant.html"));
+        if (urlRequests.pathname.startsWith("udacity-restaurant-reviews/restaurant.html/")) {
+            event.respondWith(caches.match("udacity-restaurant-reviews/restaurant.html/"));
             return;
         }
 
-        if(urlRequests.pathname.startsWith("udacity-restaurant-reviews/img")) {
+        if(urlRequests.pathname.startsWith("udacity-restaurant-reviews/img/")) {
             event.respondWith(cachedImg(event.request));
             return;
         }
