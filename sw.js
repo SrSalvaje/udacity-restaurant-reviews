@@ -5,7 +5,7 @@
 *https://matthewcranford.com/restaurant-reviews-app-walkthrough-part-4-service-workers/  
 */
 const appName="Udacity-Restaurant-Reviews",
-    staticCacheName=`${appName}-v2.2`,
+    staticCacheName=`${appName}-v2.3`,
     imgCache = `${appName}-images`;
 let allCaches=[
         staticCacheName,
@@ -65,12 +65,12 @@ self.addEventListener("activate", function(event) {
 self.addEventListener("fetch", function(event) {
     const urlRequests = new URL(event.request.url);
     if(urlRequests.origin === location.origin) {
-        if (urlRequests.pathname.startsWith("/restaurant.html")) {
-            event.respondWith(caches.match("/restaurant.html"));
+        if (urlRequests.pathname.startsWith("https://srsalvaje.github.io/udacity-restaurant-reviews/restaurant.html")) {
+            event.respondWith(caches.match("https://srsalvaje.github.io/udacity-restaurant-reviews/restaurant.html"));
             return;
         }
 
-        if(urlRequests.pathname.startsWith("/img")) {
+        if(urlRequests.pathname.startsWith("https://srsalvaje.github.io/udacity-restaurant-reviews/img")) {
             event.respondWith(cachedImg(event.request));
             return;
         }
