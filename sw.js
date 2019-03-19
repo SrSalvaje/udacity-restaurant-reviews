@@ -64,7 +64,7 @@ self.addEventListener("activate", function(event) {
 //intercept fetch requests
 self.addEventListener("fetch", function(event) {
     const urlRequests = new URL(event.request.url);
-    console.log(event.request.url);
+   // console.log(event.request.url);
     if(urlRequests.origin === location.origin) {
         if (urlRequests.pathname.startsWith("udacity-restaurant-reviews/restaurant.html/")) {
             event.respondWith(caches.match("udacity-restaurant-reviews/restaurant.html/"));
@@ -72,18 +72,18 @@ self.addEventListener("fetch", function(event) {
         }
 
         if(urlRequests.pathname.startsWith("udacity-restaurant-reviews/img/")) {
-            event.respondWith(cachedImg(event.request));
+            event.respondWith(cachedImg(event.request.url));
             return;
         }
     }
     event.respondWith(
         caches.match(event.request).then(function(response) {
             if(response) {
-                console.log(`found ${event.request}`);
+                console.log(`found ${event.request.url}`);
                 return response;
             } else{
-                console.log(`Couldn´t find cached ${event.request}`);
-                return fetch(event.request);
+                console.log(`Couldn´t find cached ${event.request.url}`);
+                return fetch(event.request.url);
             }   
         })
     ); 
